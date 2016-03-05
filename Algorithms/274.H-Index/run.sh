@@ -1,5 +1,6 @@
 #!/bin/bash
 
 
-gcc answer.c -O3 -o main
-./main test_set
+time ./debug test_set
+
+time ./release test_set

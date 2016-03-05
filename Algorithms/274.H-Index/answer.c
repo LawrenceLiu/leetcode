@@ -17,9 +17,8 @@
 
 int main(int argc, char* argv[]) {
     char * filename = argv[1];
-    LOG(ERROR, filename);
-    LOG(INFO, filename);
-    //fprintf(stderr, "%s\n", filename);
+    DEBUG_LOG("argc: %d argv[1]: %s\n", argc, argv[1]);
+    INFO_LOG("filename: %s\n", filename);
 
     //load();
 
