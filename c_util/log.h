@@ -14,7 +14,8 @@
 #include<time.h>
 
 
-#define MESSAGE_LOG(tag, message) lc_log(__FILE__, __LINE__, tag, message)
+// deprecated
+//#define MESSAGE_LOG(tag, message) lc_log(__FILE__, __LINE__, tag, message)
 
 #define INFO_LOG(fmt, ...)  print_time(); fprintf(stdout, "[%s] %s(%d):"fmt, tag_name[_INFO], __FILE__, __LINE__, __VA_ARGS__)
 
