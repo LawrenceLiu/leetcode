@@ -16,23 +16,17 @@ class Solution(object):
         """
         if "" == s:
             return 0
-        total = len(s)
-        # max_sub = s[0]
         max_len = 1
         last_pos = {s[0]:0}
-        i, j = 0, 1
-        last_str = s[0]
-        while j < total:
-            if s[j] in last_str:
-                i = last_pos[s[j]] + 1
-            last_pos[s[j]] = j
-            last_str = s[i:j+1]
+        i = 0
+        for j in range(1, len(s)):
+            c = s[j]
+            if c in last_pos and last_pos[c] >= i:
+                i = last_pos[c] + 1
+            last_pos[c] = j
+            # last_str = s[i:j+1]
             last_len = j-i+1
-            if last_len >= max_len:
-                # max_sub = last_str
-                max_len = last_len
-            j +=1
-        # print(max_sub)
+            max_len = last_len if last_len >= max_len else max_len
         return max_len
 
 if __name__ == "__main__":
@@ -41,3 +35,4 @@ if __name__ == "__main__":
     print(main.lengthOfLongestSubstring("abcabcbb"))
     print(main.lengthOfLongestSubstring("bbbbb"))
     print(main.lengthOfLongestSubstring("pwwkew"))
+    print(main.lengthOfLongestSubstring("au"))
